@@ -8,16 +8,20 @@ public class PodcastTool {
     private final GoogleSearch googleSearch;
     private final PodcastResearchAgent podcastResearchAgent;
     private final PodcastScriptWriterAgent podcastScriptWriterAgent;
+    private final PodcastAudioAgent podcastAudioAgent;
 
     public PodcastTool(
             PodcastWebQueryAgent podcastWebQueryAgent,
             GoogleSearch googleSearch,
-            PodcastResearchAgent podcastResearchAgent, PodcastScriptWriterAgent podcastScriptWriterAgent
+            PodcastResearchAgent podcastResearchAgent,
+            PodcastScriptWriterAgent podcastScriptWriterAgent,
+            PodcastAudioAgent podcastAudioAgent
     ) {
         this.podcastWebQueryAgent = podcastWebQueryAgent;
         this.googleSearch = googleSearch;
         this.podcastResearchAgent = podcastResearchAgent;
         this.podcastScriptWriterAgent = podcastScriptWriterAgent;
+        this.podcastAudioAgent = podcastAudioAgent;
     }
 
     @Tool(
@@ -39,8 +43,7 @@ public class PodcastTool {
         var podcastScript = podcastScriptWriterAgent.writeScript(researchResult);
         System.out.println("PODCAST SCRIPT: " + podcastScript);
 
-
-
+        podcastAudioAgent.createAudio(podcastScript);
         return true;
     }
 }

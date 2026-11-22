@@ -25,7 +25,8 @@ public class PodcastAgent {
                 new PodcastWebQueryAgent(appConfiguration),
                 new GoogleSearch(appConfiguration),
                 new PodcastResearchAgent(appConfiguration),
-                new PodcastScriptWriterAgent(appConfiguration)
+                new PodcastScriptWriterAgent(appConfiguration),
+                new PodcastAudioAgent(appConfiguration)
         );
 
         this.podcastAssistant = AiServices.builder(Assistant.class)
