@@ -44,11 +44,11 @@ public class PodcastAudioAgent {
             var candidate = response.candidates().get().getFirst();
 
             var rawAudio = candidate.content()
-                    .flatMap(c -> c.parts())
+                    .flatMap(Content::parts)
                     .filter(parts -> !parts.isEmpty())
-                    .map(parts -> parts.getFirst())
-                    .flatMap(part -> part.inlineData())
-                    .flatMap(inlineData -> inlineData.data());
+                    .map(List::getFirst)
+                    .flatMap(Part::inlineData)
+                    .flatMap(Blob::data);
 
             if (rawAudio.isPresent()) {
                 try {
