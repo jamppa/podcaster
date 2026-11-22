@@ -178,18 +178,6 @@ podcast-agent/
 │   └── test/java/com/krakpaip/
 │       └── AppTest.java
 ```
-
----
-
-## 🔮 Future Roadmap
-
-- [ ] **Text-to-Speech (TTS) Integration**: Direct audio synthesis using ElevenLabs or Gemini Multi-modal Audio API to output playable `.mp3` / `.wav` files.
-- [ ] **Multi-Voice / Host Dialogue**: Extend scriptwriter and TTS to produce two-host banter and conversational discussions.
-- [ ] **Audio Mastering**: Layering intro/outro music beds and sound effects using FFmpeg.
-- [ ] **RSS Feed Generation**: Automated publishing to podcast hosting platforms and RSS readers.
-
----
-
 ## 📄 License
 
 This project is open-source and available under the [MIT License](LICENSE).
